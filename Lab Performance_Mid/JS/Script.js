@@ -10,7 +10,7 @@ const unitPrice=1000;
         quantityInput.value=0;
     }
 
-    let total= unitPrice*quantity;
+    let total= unitPrice*quantity*30;
     totalPriceInput.value=total;
 
     if(total>1000){
