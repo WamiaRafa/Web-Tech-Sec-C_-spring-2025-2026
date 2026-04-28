@@ -1,30 +1,28 @@
-<?php
-include "../Controller/practice.php";
-?>
+
 <!DOCTYPE html>
 <html>
 <body>
-<form  method="post" action="">
+<form  method="post" action="../Controller/form_Session_Cookies.php">
    <table>
       <tr>
-        <td> <label for="name">Name:</label></td>
-        <td><input type="text" id ="name" name="name"></td>
+        <td> <label for="fname">Name:</label></td>
+        <td><input type="text" id ="fname" name="fname" ></td>
     </tr>
 
     <tr>
       <td><label for="password">Password:</label></td>
-      <td><input type="password" id="password" value=""></td>
+      <td><input type="password" id="password" name="password"></td>
     </tr>
 
     <tr>
-      <td><label for="email">Password:</label></td>
-      <td><input type="emails" id="email" value=""></td>
-</tr>
+      <td><label for="email">Email:</label></td>
+      <td><input type="email" id="email" name="email"></td>
+    </tr>
 
 
     </table>
-
-   <input type="submit" value="Submit">
+    <label> Submit:
+   <input type="submit" name="submit">
 </form>
 
 </body>
