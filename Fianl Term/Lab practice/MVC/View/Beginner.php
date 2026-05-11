@@ -1,5 +1,5 @@
 <?php
-echo "hello world <br>";
+/*echo "hello world <br>";
 $color="rafa";
 $Color="web tech";
 $m=10;
@@ -83,7 +83,7 @@ $myCar = new Car("red", "Volvo");
 var_dump($myCar);*/
 
 //string function
-echo "string length: ";
+/*echo "string length: ";
 echo strlen("hello World");
 echo"<br>";
 
@@ -234,5 +234,20 @@ $cars2=array( "Brand"=>"porche" , "model"=>"Mustang", "year"=>2023);
 
 $newcar=array_diff($cars2,["Mustang", 1964]);
 var_dump($newcar);
+*/
 
+ $model;
+class Phone{
+
+
+function phonemodel($number){
+ //global $model;
+  $model;
+  $model=$number;
+  echo "This is $model";
+}
+}
+
+$apple=new Phone();
+$apple->phonemodel('iphone');
 ?>

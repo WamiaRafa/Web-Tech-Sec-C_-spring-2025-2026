@@ -1,33 +1,31 @@
 <?php
+session_start();
+include "../Model/db.php";
 $name="";
 $password="";
 $mail="";
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $name=$_POST['fname'];
-    $password=$_POST['password'];
-    $mail=$_POST['email'];
-    if(!empty($name)&&strlen($name)>=5){
-        echo " User Name : ".$name."<br>";
-}
+$name=$_POST['fname'];
+$password=$_POST['password'];
+    if(!empty($name)&&strlen($name)>=5&&strlen($password)>=5){
+        $_SESSION['name']=$name;
+        setcookie("Username",$name,time()+3600,"/" ); 
+        $database=new db();
+        $connection=$database->connection();
+        $result=$database->signUp($connection,"info",$name, $password);
     
-else {
-    echo"<b>Try to follow our instructions !<b>";
-}
-if(strlen($password>=2)){
-$validpass=$password;
-}
-else{
-    $validpass="password must be contain minimum 2 chars";
-}
-if(!filter_var($mail,FILTER_VALIDATE_EMAIL)){
-    $mailerr="Only letters and white space allowed";
-    echo "<b>$mailerr<b><BR>";
-}
-else{
-    $validmail=$mail;
-    echo "Your mail: ".$mail; 
-}
+        if($result){
+            Header("Location:../View/login.php");
+            exit();
+        }
+        else{
+            echo"database error";
+        }
+    }
+    else{
+    echo"not successfully";
+    }
 }
 
 ?>

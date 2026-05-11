@@ -10,11 +10,11 @@
 <body>
     <div >
     
-    <form  method="post" action="../Controller/Validation.php">
+    <form  method="post" action="../Controller/RegistrationValidation.php">
     
       <table>
 
-      <tr><td><h3>Sign In</h3></td></tr>
+      <tr><td><h3>Sign UP</h3></td></tr>
             <tr>
             <td><label for=fname><b>Name:</b>
             <input type="text" name="fname">
